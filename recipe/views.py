@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
-def say_hello(request):
-    return HttpResponse("Hello")
+# Changed the function so that it makes sense.
+def show_recipe_list(request):
+    return render(request, 'recipe/recipe_list.html')

@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from recipe.views import say_hello
+from recipe.views import show_recipe_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("hello/", say_hello, name='hello')
+    path('', show_recipe_list, name="recipe_list")   # This is our home page that will display automatically. 
 ]
