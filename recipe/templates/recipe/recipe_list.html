@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Hello!</h1>
-    <p>This is a paragraph from the html template which we have encorporated into this project</p>
+    <p>This is a paragraph from the html template which we have encorporated into this project</p> 
+    <table>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.done }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
