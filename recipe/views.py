@@ -11,3 +11,6 @@ def show_recipe_list(request):
         'items': items
     }
     return render(request, 'recipe/recipe_list.html', context)
+
+def add_item(request):
+    return render(request, 'recipe/add_item.html')
