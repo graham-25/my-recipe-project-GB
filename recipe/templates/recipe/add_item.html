@@ -9,17 +9,17 @@
 <body>
     <h1>Add a To do Item</h1>
     <p>This is a paragraph from the html template which we have encorporated into this project</p> 
-    <form 
-    <form method="post" action="add" />
+    <form method="post" action="add">
+        {% csrf_token %}
         <div>
             <p>
-                <label for="id_name">Name</label>
+                <label for="id_name">Name: </label>
                 <input type="tex" id="id_name" name="item_name" />
             </p>
         </div>
         <div>
             <p>
-                <label for="id_done">Done</label>
+                <label for="id_done">Done: </label>
                 <input type="checkbox" id="id_done" name="done" />
             </p>
         </div>
