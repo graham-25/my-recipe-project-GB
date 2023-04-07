@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import item
+from .forms import ItemForm
 
 # Create your views here.
 # Changed the function so that it makes sense.
@@ -14,9 +15,13 @@ def show_recipe_list(request):
 
 def add_item(request):
     if request.method == 'POST':
-        name = request.POST.get('item_name')
-        done = 'done' in request.POST
-        item.objects.create(name=name, done=done)
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('recipe_list')
+    form = ItemForm()
+    context = {
+        'form': form
+    }
 
-        return redirect('recipe_list')
-    return render(request, 'recipe/add_item.html')
+    return render(request, 'recipe/add_item.html', context)
