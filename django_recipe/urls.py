@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from recipe.views import show_recipe_list, add_item
+from recipe import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', show_recipe_list, name="recipe_list"),   # This is our home page that will display automatically. 
-    path('add', add_item, name="add")
+    path('', views.show_recipe_list, name="recipe_list"),   # This is our home page that will display automatically. 
+    path('add', views.add_item, name="add"),
+    path('edit/<item_id>', views.edit_item, name='edit'),   # We want this path to point to edit <item_id> 
+    path('toggle/<item_id>', views.toggle_item, name='toggle'),
+    path('delete/<item_id>', views.delete_item, name='delete'),
 ]
