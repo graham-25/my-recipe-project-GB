@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fgc$b=&+kxr!1f#5^0k63!v4%v+6e!4-o5uo^dzq)0e$ec!3(u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["8000-graham25-myrecipeprojec-l0i9jnddm24.ws-eu100.gitpod.io", "localhost"]
 
 
 # Application definition
